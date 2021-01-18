@@ -1,15 +1,109 @@
 <!doctype html>
 <html lang="fr">
+<meta charset="UTF-8">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Taquin</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css?=time()">  <!-- ?=time() permet d'appliquer toujours le contenu du fichier CSS et non pas la copie du cache -->
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="refill()">
+<header>
+    <nav class="navTop">
+        <div class="row">
+            <div class="col-ld-12 col-md-12 col-xs-12"> <div id="emptyLine"><br></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div id ="titrePage" class="alert alert-secondary col-xs-4">
+                Voici le jeu du Taquin.<br/>
+                Passez la souris sur une case bleue adjacente à la case rouge pour la déplacer.
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-ld-12 col-md-12 col-xs-12"> <div id="emptyLine"><br></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-ld-12 col-md-12 col-xs-12"> <div id="emptyLine"><br></div>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<script src ="script.js"></script>
-</body>
+<div id="matrix" class ="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('0');">1</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('1');">2</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('2');">3</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('3');">4</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('4');">5</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('5');">6</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('6');">7</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('7');">8</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('8');">9</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('9');">10</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('10');">11</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('11');">12</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('12');">13</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('13');">14</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-info cell" onmouseover="moveElement('14');">15</button>
+        </div>
+        <div class="col-md-1 col-xs-1"> <button type="button" class="btn btn-danger" onmouseover="moveElement(15);">*</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+<div  class = "container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div id="divRefill" class="alert alert-secondary col-xs-4 col-md-4">
+            <button id='btRefill' class="btn btn-warning" onclick="window.location.reload(false);">Relancer jeu</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+<footer>
+</footer>
 </html>

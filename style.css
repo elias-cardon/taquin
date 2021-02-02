@@ -1,4 +1,4 @@
-.btn-info, .btn-danger, .btn-success{
+.btn-info, .btn-danger, .btn-success {
     width: 100%;
     margin: 2px;
     font-size: 22;
@@ -6,28 +6,28 @@
     height: 100px;
 }
 
-.col-md-1,.col-xs-1{
+.col-md-1, .col-xs-1 {
     padding: 2px;
 }
 
-#emptyLine{
+#emptyLine {
     height: 30px;
 }
 
-#titrePage{
-    margin:auto;
+#titrePage {
+    margin: auto;
     font-family: verdana, Geneva, Tahoma, sans-serif;
     font-size: 30;
-    font-stretch:expanded;
+    font-stretch: expanded;
     text-align: center;
     vertical-align: middle
 }
 
-#btRefill{
+#btRefill {
     width: 40%;
     margin: auto;
 }
 
-#divRefill{
+#divRefill {
     padding: 10px;
 }
